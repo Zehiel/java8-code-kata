@@ -25,7 +25,7 @@ public class Exercise1Test extends ClassicOnlineStore {
     public void iterateByForEach() {
         Iterable<Customer> customerIterable = this.mall.getCustomerList();
         List<String> nameList = new ArrayList<>();
-
+        customerIterable.forEach(customer -> nameList.add(customer.getName()));
         /**
          * Create a {@link Consumer} which represents an operation to add customer's name to {@link nameList} list.
          * Iterate {@link customerIterable} with {@link Iterable#forEach} and use the {@link Consumer}
