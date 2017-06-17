@@ -75,9 +75,19 @@ public class Exercise1Test extends ClassicOnlineStore {
         /**
          * Create a {@link Comparator} to sort the name list by their name's length in ascending order.
          */
-        Comparator<Object> comparator = null;
-        // nameList.
-
+        Comparator<String> comparator = new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if(o1.length()>o2.length()){
+                    return 1;
+                }else if(o1.length()==o2.length()){
+                    return 0;
+                }else {
+                    return -1;
+                }
+            }
+        };
+        nameList.sort(comparator);
         assertThat(nameList.toString(), is("[Joe, Chris, Steven, Patrick]"));
     }
 
