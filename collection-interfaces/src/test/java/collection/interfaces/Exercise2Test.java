@@ -43,7 +43,8 @@ public class Exercise2Test {
          */
         // map.
         // map.
-
+        map.putIfAbsent("Alice",32);
+        map.putIfAbsent("Joe",32);
         assertThat(map.get("Alice"), is(32));
         assertThat(map.get("Joe"), is(22));
     }
